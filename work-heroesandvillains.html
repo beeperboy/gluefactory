@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes & Villains - Glue Factory</title>
+    <style>
+        @font-face {
+            font-family: 'RationalTWDisplay';
+            src: url('rationaltwdisplaydemo-light.otf') format('opentype');
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'RationalTWDisplay', sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #35de26;
+        }
+        
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 20px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="selectedwork.html" class="back-link">BACK</a>
+    <div class="content">
+        <h1>Heroes & Villains</h1>
+        
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="metro1.jpg" alt="Heroes and Villains 1">
+            </div>
+            <div class="slide">
+                <img src="metro2.jpg" alt="Heroes and Villains 2">
+            </div>
+            <div class="slide">
+                <img src="metro3.jpg" alt="Heroes and Villains 3">
+            </div>
+            <div class="slide">
+                <img src="metro4.jpg" alt="Heroes and Villains 4">
+            </div>
+            <div class="slide">
+                <img src="metro5.jpg" alt="Heroes and Villains 5">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <p>In collaboration with Metro Boomin and Boominati, we developed an original retro video game and custom comic book for his #1 album Heroes & Villains. This project involved creating a unique narrative that extended the albums theme into an immersive experience.</p>
+        
+        <p>We worked closely with Metro Boomins team to develop the storyline, leading to the orchestration of a comic book signing event that drew a huge crowd in Soho. The event celebrated the albums release and engaged fans with a blend of music and visual storytelling, resulting in significant buzz and excitement.</p>
+        
+        <p>Heroes & Villains debuted at number one on the Billboard 200 and was certified platinum, underscoring the project’s widespread impact and success.
+
+        </p>
+        
+        <p><strong>Services:</strong> Campaign Development, Creative Direction, Graphic Design, Game Development</p>
+        <p><strong>Client:</strong> Republic Records/Boominati</p>
+        <p><strong>Year:</strong> May, 2023</p>
+        
+        <h2>Campaign Video</h2>
+        <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/982677969?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Amplify Video 1668732095424864256"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+        
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

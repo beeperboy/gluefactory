@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Glue Factory</title>
+    <style>
+        @font-face {
+            font-family: 'RationalTWDisplay';
+            src: url('rationaltwdisplaydemo-light.otf') format('opentype');
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'RationalTWDisplay', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        .about-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .back-link:hover {
+            color: #35de26; /* Light green */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+            }
+
+            .image-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">BACK</a>
+    <div class="container">
+        <div class="about-content">
+            <p>Glue Factory is an art studio based in Brooklyn, NY working with a network of leading brands, artists, production companies and more.<p>
+            <br><br>
+            <p>We provide concept development, creative direction, strategy, and production across all social and traditional media.</p>
+            <br><br>
+            <p><strong>Clients:</strong> McDonald’s, Nike, Shopify, Drake, Megan Thee Stallion, Lil Uzi Vert, Wieden + Kennedy, SoundCloud.<p>
+        </div>
+        <div class="image-container">
+            <img src="stefan-cohen-image.jpg" alt="Stefan Cohen in his creative space">
+        </div>
+    </div>
+</body>
+</html>

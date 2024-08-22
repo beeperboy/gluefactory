@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Still Over It - Glue Factory</title>
+    <style>
+        @font-face {
+            font-family: 'RationalTWDisplay';
+            src: url('rationaltwdisplaydemo-light.otf') format('opentype');
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'RationalTWDisplay', sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #35de26;
+        }
+        
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 20px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="selectedwork.html" class="back-link">BACK</a>
+    <div class="content">
+        <h1>Still Over It</h1>
+        
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="summer1.jpg" alt="Still Over It 1">
+            </div>
+            <div class="slide">
+                <img src="summer2.jpg" alt="Still Over It 2">
+            </div>
+            <div class="slide">
+                <img src="summer3.jpg" alt="Still Over It 3">
+            </div>
+            <div class="slide">
+                <img src="summer4.jpg" alt="Still Over It 4">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <p>To promote artist Summer Walker's album Still Over It we conceptualized and directed a retro styled hypnosis video titled Still Over It Affirmations. </p>
+        
+        <p>The video has hundreds of thousands of views across Summers' social media and there was an amazing response from her fanbase.</p>
+                
+        <p><strong>Services:</strong> Strategy, Creative Direction</p>
+        <p><strong>Client:</strong> LVRN</p>
+        <p><strong>Year:</strong> November, 2021</p>
+       
+        <h2>Campaign Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7TFA7za0ipc?si=HkTivqVr9C3uyF9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+        
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wunna Tarot Cards - Glue Factory</title>
+    <style>
+        @font-face {
+            font-family: 'RationalTWDisplay';
+            src: url('rationaltwdisplaydemo-light.otf') format('opentype');
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'RationalTWDisplay', sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #35de26;
+        }
+        
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 20px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="selectedwork.html" class="back-link">BACK</a>
+    <div class="content">
+        <h1>2Mega</h1>
+        
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="wunna1.jpg" alt="Gunna 1">
+            </div>
+            <div class="slide">
+                <img src="wunna2.jpg" alt="Gunna 2">
+            </div>
+            <div class="slide">
+                <img src="wunna3.jpg" alt="Gunna 3">
+            </div>
+            <div class="slide">
+                <img src="wunna4.jpg" alt="Gunna 4">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <p>We teamed up with 300 Entertainment to design and manufacture custom Tarot Cards for Gunna.</p>
+        
+        <p>Programmed a companion Instagram AR filter that plays Gunna’s single and reveals a 3D spinning logo when pointed at the cards.</p>
+        
+        <p>Both variations as well as a reorder sold out from his online store.</p>
+        
+        <p><strong>Services:</strong> Creative Direction, Game Development</p>
+        <p><strong>Client:</strong> 300 Entertainment</p>
+        <p><strong>Year:</strong> May, 2020</p>
+        
+        <h2>Campaign Video</h2>
+        <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/1001695934?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Babytron General Preview"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+        
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
